@@ -13,7 +13,7 @@ public class Main {
         try {
             scanner = new Scanner(new File("src/in.txt"));
 
-            int[] numbers = new int[11];
+            int[] numbers = new int[15];
 
            for(int i=0;i<numbers.length;i++){
                numbers[i]=scanner.nextInt();
@@ -28,6 +28,16 @@ public class Main {
                    }
                }
            }
+
+            for(int i=0;i<numbers.length;i++){
+                for(int j=0;j<numbers.length-1;j++){
+                    if(numbers[j]>10&&numbers[j]<numbers[j+1]){
+                        z=numbers[j];
+                        numbers[j]=numbers[j+1];
+                        numbers[j+1]=z;
+                    }
+                }
+            }
 
 
             for(int i=0;i<numbers.length;i++) {
